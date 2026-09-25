@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Market Grid</title>
+
+<script>
+const META_PIXEL_ID="YOUR_PIXEL_ID";
+const TELEGRAM_LINK="https://t.me/YOUR_CLIENT_TELEGRAM";
+const AGENCY_LINK="https://YOUR-SNOW-AGENCY-LINK.com";
+</script>
+
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window,document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+
+window.addEventListener("DOMContentLoaded",()=>{
+if(typeof fbq!=="undefined"){
+fbq("init",META_PIXEL_ID);
+fbq("track","PageView");
+}
+});
+</script>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+
+body{
+min-height:100vh;
+background:#f4f4f0;
+font-family:Arial,sans-serif;
+color:#111;
+}
+
+.wrap{
+width:100%;
+max-width:620px;
+min-height:100vh;
+margin:auto;
+padding:15px;
+display:flex;
+align-items:center;
+}
+
+.card{
+width:100%;
+background:#fff;
+border:2px solid #111;
+box-shadow:9px 9px 0 #111;
+padding:25px;
+}
+
+.header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+border-bottom:2px solid #111;
+padding-bottom:17px;
+}
+
+.logo{
+width:60px;
+height:60px;
+object-fit:cover;
+border-radius:12px;
+border:2px solid #111;
+}
+
+.code{
+font-family:"Courier New",monospace;
+font-size:9px;
+font-weight:bold;
+}
+
+.hero{
+padding:35px 0 28px;
+}
+
+.tag{
+display:inline-block;
+background:#c7ff25;
+border:2px solid #111;
+padding:8px 11px;
+font-size:9px;
+font-weight:bold;
+letter-spacing:1px;
+}
+
+h1{
+font-size:clamp(44px,10vw,73px);
+line-height:.9;
+letter-spacing:-5px;
+margin:19px 0;
+max-width:540px;
+}
+
+.desc{
+font-size:14px;
+line-height:1.7;
+color:#555;
+max-width:480px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+border-top:2px solid #111;
+border-left:2px solid #111;
+}
+
+.cell{
+padding:19px 14px;
+border-right:2px solid #111;
+border-bottom:2px solid #111;
+}
+
+.cell small{
+font-family:"Courier New",monospace;
+font-size:8px;
+font-weight:bold;
+display:block;
+margin-bottom:8px;
+color:#777;
+}
+
+.cell strong{
+font-size:12px;
+}
+
+.cta{
+display:flex;
+align-items:center;
+justify-content:space-between;
+margin-top:18px;
+padding:19px;
+background:#111;
+color:#fff;
+text-decoration:none;
+font-size:11px;
+font-weight:bold;
+letter-spacing:1px;
+transition:.2s;
+}
+
+.cta:hover{
+background:#222;
+transform:translate(-2px,-2px);
+box-shadow:4px 4px 0 #c7ff25;
+}
+
+.note{
+font-size:9px;
+line-height:1.5;
+color:#777;
+text-align:center;
+margin-top:17px;
+}
+
+.agency{
+text-align:center;
+font-size:9px;
+margin-top:17px;
+}
+
+.agency a{
+color:#777;
+text-decoration:none;
+}
+
+@media(max-width:420px){
+.card{padding:19px}
+h1{letter-spacing:-3px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrap">
+<div class="card">
+
+<div class="header">
+<img src="logo.png" class="logo" alt="Logo">
+<div class="code">SYSTEM / MARKET_01</div>
+</div>
+
+<div class="hero">
+
+<div class="tag">TELEGRAM COMMUNITY</div>
+
+<h1>Markets move. Stay connected.</h1>
+
+<p class="desc">
+Join a focused community for market discussions,
+educational content and regular updates.
+</p>
+
+</div>
+
+<div class="grid">
+
+<div class="cell">
+<small>01 / TOPIC</small>
+<strong>MARKET DISCUSSION</strong>
+</div>
+
+<div class="cell">
+<small>02 / FORMAT</small>
+<strong>TELEGRAM</strong>
+</div>
+
+<div class="cell">
+<small>03 / CONTENT</small>
+<strong>EDUCATIONAL</strong>
+</div>
+
+<div class="cell">
+<small>04 / ACCESS</small>
+<strong>COMMUNITY</strong>
+</div>
+
+</div>
+
+<a href="#" id="telegramBtn" class="cta">
+<span>OPEN TELEGRAM</span>
+<span>↗</span>
+</a>
+
+<div class="note">
+Educational information only. No guaranteed returns or financial advice.
+</div>
+
+<div class="agency">
+<a href="#" id="agencyLink">Ads managed by Snow Ads Agency</a>
+</div>
+
+</div>
+</div>
+
+<script>
+document.getElementById("telegramBtn").href=TELEGRAM_LINK;
+document.getElementById("agencyLink").href=AGENCY_LINK;
+
+document.getElementById("telegramBtn").addEventListener("click",()=>{
+if(typeof fbq!=="undefined"){
+fbq("trackCustom","TelegramJoinClick");
+}
+});
+</script>
+
+</body>
+</html>
